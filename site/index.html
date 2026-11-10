@@ -76,20 +76,22 @@
 <section class="problem" aria-labelledby="problem-title">
   <h2 id="problem-title" data-i18n="problem.title">Correct, complete, and impossible to follow</h2>
   <p class="intro" data-i18n="problem.p">Ask an AI agent how something works and you often get a wall of text. If you have trouble with attention or focus, you lose the thread halfway, and the answer is wasted.</p>
+  <p class="question"><span data-i18n="cmp.qlabel">Question:</span> <strong data-i18n="cmp.q">Why does my coffee get cold so fast?</strong></p>
   <div class="compare">
     <div class="pane before">
       <p class="pane-title" data-i18n="cmp.before">Usual answer</p>
-      <div class="wall" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+      <p class="wall" data-i18n="cmp.wall">The cooling of a hot beverage results from several superimposed heat transfer mechanisms, including natural convection at the liquid-air interface, whose coefficient depends on the Rayleigh number, infrared radiation governed by the Stefan-Boltzmann law, conduction through the cup wall according to its thermal diffusivity, and evaporation, whose latent heat, combined with the saturation vapor pressure, explains why in practice, and subject to ambient conditions, it is worth noting that…</p>
     </div>
     <div class="pane after">
       <p class="pane-title" data-i18n="cmp.after">With progressive-explainer</p>
-      <div class="blocks" aria-hidden="true">
-        <i class="answer"></i>
-        <i class="frame"></i><i class="frame short"></i>
-        <i class="head"></i><i class="line"></i><i class="line short"></i>
-        <i class="head"></i><i class="line"></i>
-        <i class="check"></i><i class="check"></i><i class="check"></i>
-      </div>
+      <p class="a-answer" data-i18n="cmp.a1">Your coffee loses its heat through the top, mostly by evaporating.</p>
+      <p data-i18n="cmp.a2">Picture your cup as a house with no roof: the heat escapes through there first.</p>
+      <p data-i18n="cmp.a3"><strong>In one sentence:</strong> put a lid on it.</p>
+      <ul class="mini-check">
+        <li class="done" data-i18n="cmp.c1">1. Overview 🟢</li>
+        <li data-i18n="cmp.c2">2. Does the cup matter? 🟢</li>
+        <li data-i18n="cmp.c3">3. Milk: does it help? 🟡</li>
+      </ul>
     </div>
   </div>
 </section>

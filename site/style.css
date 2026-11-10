@@ -119,20 +119,15 @@ h2 { font-size: clamp(24px, 3.4vw, 32px); }
 .pane { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 18px; }
 .pane-title { font-weight: 700; font-size: 15px; margin: 0 0 14px; }
 .pane.after .pane-title { color: var(--accent); }
-.wall i, .blocks i { display: block; height: 8px; border-radius: 4px; background: var(--line); margin-bottom: 7px; }
-.wall i:nth-child(3n) { width: 94%; }
-.wall i:nth-child(5n) { width: 88%; }
-.wall i:last-child { width: 60%; }
-.blocks i { margin-bottom: 9px; }
-.blocks .answer { height: 14px; width: 70%; background: var(--accent); margin-bottom: 16px; }
-.blocks .frame { width: 55%; background: var(--accent-soft); border-left: 4px solid var(--accent); }
-.blocks .frame.short { width: 42%; margin-bottom: 16px; }
-.blocks .head { height: 11px; width: 40%; background: var(--muted); opacity: 0.6; margin-top: 4px; }
-.blocks .line { width: 80%; }
-.blocks .line.short { width: 58%; }
-.blocks .check { width: 50%; position: relative; margin-left: 18px; }
-.blocks .check::before { content: ""; position: absolute; left: -18px; top: -1px; width: 10px; height: 10px; border: 2px solid var(--accent); border-radius: 3px; }
-.blocks .check:first-of-type { margin-top: 16px; }
+.question { margin: 0 0 16px; font-size: 16px; }
+.question span { color: var(--muted); }
+.wall { margin: 0; font-size: 13px; line-height: 1.45; text-align: justify; hyphens: auto; color: var(--muted); }
+.pane.after p { margin: 0 0 10px; font-size: 15px; }
+.pane.after .a-answer { font-weight: 700; font-size: 16px; padding-left: 10px; border-left: 4px solid var(--accent); }
+.mini-check { list-style: none; margin: 12px 0 0; padding: 10px 0 0; border-top: 1px dashed var(--line); font-size: 14px; }
+.mini-check li { padding-left: 24px; position: relative; margin-bottom: 4px; }
+.mini-check li::before { content: ""; position: absolute; left: 0; top: 4px; width: 12px; height: 12px; border: 2px solid var(--accent); border-radius: 3px; }
+.mini-check li.done::before { background: var(--accent); }
 
 /* how */
 .parts { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; counter-reset: part; }
