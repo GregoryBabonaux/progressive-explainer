@@ -1,0 +1,9 @@
+{
+  "name": "progressive-explainer",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "npm --prefix cli test",
+    "versions": "node scripts/versions.mjs --check"
+  }
+}

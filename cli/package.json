@@ -1,0 +1,32 @@
+{
+  "name": "progressive-explainer-cli",
+  "version": "0.1.0",
+  "description": "Installs progressive-explainer: the skill that turns AI explanations into a short overview plus a checklist to go deeper.",
+  "type": "module",
+  "bin": {
+    "progressive-explainer": "bin/progressive-explainer.js"
+  },
+  "files": [
+    "bin",
+    "src",
+    "skills",
+    "AGENTS.snippet.md",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.js\"",
+    "prepack": "node ../scripts/bundle.mjs"
+  },
+  "keywords": ["skills", "agent-skills", "claude-code", "codex", "cursor", "explain", "adhd", "accessibility"],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GregoryBabonaux/progressive-explainer.git",
+    "directory": "cli"
+  },
+  "homepage": "https://github.com/GregoryBabonaux/progressive-explainer#readme"
+}

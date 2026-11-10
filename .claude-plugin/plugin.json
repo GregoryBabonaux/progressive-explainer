@@ -1,0 +1,10 @@
+{
+  "name": "progressive-explainer",
+  "version": "0.1.0",
+  "description": "Explanations you can actually follow: a short overview with one running analogy, then a progress checklist to go deeper, one piece at a time.",
+  "author": {
+    "name": "Grégory Babonaux"
+  },
+  "license": "MIT",
+  "keywords": ["skills", "explain", "learning", "adhd", "accessibility", "documentation"]
+}

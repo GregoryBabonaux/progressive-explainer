@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>progressive-explainer: explanations you can actually follow</title>
+<meta name="description" content="A skill for AI agents that turns long answers into a short overview with one running analogy, then a progress checklist to go deeper, one piece at a time.">
+<meta property="og:title" content="progressive-explainer: explanations you can actually follow">
+<meta property="og:description" content="A short overview first, then you pick what to dig into.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧭</text></svg>">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#main" data-i18n="skip">Skip to content</a>
+
+<header class="top">
+  <a class="brand" href="./" aria-label="progressive-explainer home">
+    <span aria-hidden="true">🧭</span>
+    <span>progressive-explainer</span>
+  </a>
+  <nav aria-label="Sections">
+    <a href="#how" data-i18n="nav.how">How it works</a>
+    <a href="#rules" data-i18n="nav.rules">Rules</a>
+    <a href="#install" data-i18n="nav.install">Install</a>
+    <a href="https://github.com/GregoryBabonaux/progressive-explainer">GitHub</a>
+    <label class="lang"><span class="visually-hidden" data-i18n="lang">Language</span>
+      <select id="lang">
+        <option value="en">English</option>
+        <option value="fr">Français</option>
+        <option value="es">Español</option>
+        <option value="de">Deutsch</option>
+        <option value="pt">Português</option>
+        <option value="zh">简体中文</option>
+        <option value="ja">日本語</option>
+        <option value="ko">한국어</option>
+      </select>
+    </label>
+  </nav>
+</header>
+
+<main id="main">
+
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero-copy">
+    <h1 id="hero-title" data-i18n="hero.title">Explanations you can actually follow.</h1>
+    <p class="lede" data-i18n="hero.lede">progressive-explainer is a skill for AI agents. It turns long answers into a short overview with one running analogy, then lets you pick what to dig into, one piece at a time.</p>
+    <div class="cta">
+      <div class="cmd" data-copy>
+        <code>npx skills add GregoryBabonaux/progressive-explainer</code>
+        <button type="button" class="copy" data-i18n="copy">Copy</button>
+      </div>
+      <a class="ghost" href="#install" data-i18n="hero.plugin">Claude Code plugin</a>
+    </div>
+    <p class="agents" data-i18n="hero.agents">Works with Claude, Claude Code, Codex, Cursor, Gemini CLI, GitHub Copilot and any agent that reads <code>SKILL.md</code>.</p>
+  </div>
+
+  <figure class="demo">
+    <div class="card">
+      <p class="card-title" data-i18n="demo.title">Go further</p>
+      <p class="legend"><span class="dot easy"></span><span data-i18n="demo.easy">easy</span> <span class="dot mid"></span><span data-i18n="demo.mid">intermediate</span> <span class="dot adv"></span><span data-i18n="demo.adv">advanced</span></p>
+      <ul class="checklist">
+        <li><label><input type="checkbox" checked> <span><b data-i18n="demo.i1t">1. Overview</b> <span data-i18n="demo.i1">one thread for JS, slow work handed off</span></span><i class="dot easy" aria-hidden="true"></i></label></li>
+        <li><label><input type="checkbox"> <span><b data-i18n="demo.i2t">2. What actually blocks</b> <span data-i18n="demo.i2">which patterns freeze the server?</span></span><i class="dot easy" aria-hidden="true"></i></label></li>
+        <li><label><input type="checkbox"> <span><b data-i18n="demo.i3t">3. Execution order</b> <span data-i18n="demo.i3">Promise, nextTick or setTimeout first?</span></span><i class="dot mid" aria-hidden="true"></i></label></li>
+        <li><label><input type="checkbox"> <span><b data-i18n="demo.i4t">4. Diagnosing a block</b> <span data-i18n="demo.i4">how do you find the culprit?</span></span><i class="dot mid" aria-hidden="true"></i></label></li>
+        <li><label><input type="checkbox"> <span><b data-i18n="demo.i5t">5. Several processes</b> <span data-i18n="demo.i5">how do you use every core?</span></span><i class="dot adv" aria-hidden="true"></i></label></li>
+      </ul>
+      <div class="progress" aria-hidden="true"><span id="bar"></span></div>
+      <p class="card-hint" data-i18n="demo.hint">Reply with a number (or several).</p>
+    </div>
+    <figcaption data-i18n="demo.caption">The end of every explanation: tick the boxes and watch your progress.</figcaption>
+  </figure>
+</section>
+
+<section class="problem" aria-labelledby="problem-title">
+  <h2 id="problem-title" data-i18n="problem.title">Correct, complete, and impossible to follow</h2>
+  <p class="intro" data-i18n="problem.p">Ask an AI agent how something works and you often get a wall of text. If you have trouble with attention or focus, you lose the thread halfway, and the answer is wasted.</p>
+  <div class="compare">
+    <div class="pane before">
+      <p class="pane-title" data-i18n="cmp.before">Usual answer</p>
+      <div class="wall" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    </div>
+    <div class="pane after">
+      <p class="pane-title" data-i18n="cmp.after">With progressive-explainer</p>
+      <div class="blocks" aria-hidden="true">
+        <i class="answer"></i>
+        <i class="frame"></i><i class="frame short"></i>
+        <i class="head"></i><i class="line"></i><i class="line short"></i>
+        <i class="head"></i><i class="line"></i>
+        <i class="check"></i><i class="check"></i><i class="check"></i>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how" class="how" aria-labelledby="how-title">
+  <h2 id="how-title" data-i18n="how.title">Two stages: a short overview, then you choose</h2>
+  <p class="intro" data-i18n="how.intro">The first document is 250 to 400 words, always in the same order.</p>
+  <ol class="parts">
+    <li><h3 data-i18n="how.s1.t">One-sentence answer</h3><p data-i18n="how.s1.p">The point, in under 20 words, before anything else.</p></li>
+    <li><h3 data-i18n="how.s2.t">The frame</h3><p data-i18n="how.s2.p">What this is about, why it matters, who decides.</p></li>
+    <li><h3 data-i18n="how.s3.t">How it works</h3><p data-i18n="how.s3.p">2 to 4 short sections, with one analogy running through all of them.</p></li>
+    <li><h3 data-i18n="how.s4.t">A diagram, if useful</h3><p data-i18n="how.s4.p">5 elements at most, every arrow labelled.</p></li>
+    <li><h3 data-i18n="how.s5.t">One-sentence recap</h3><p data-i18n="how.s5.p">Something you could repeat to someone else.</p></li>
+    <li><h3 data-i18n="how.s6.t">A progress checklist</h3><p data-i18n="how.s6.p">Subtopics sorted from easy to advanced. Reply with a number: the agent covers it with the same analogy and ticks the box.</p></li>
+  </ol>
+</section>
+
+<section id="rules" class="rules" aria-labelledby="rules-title">
+  <h2 id="rules-title" data-i18n="rules.title">The rules that make it readable</h2>
+  <ul class="rule-list">
+    <li><strong data-i18n="r1.t">The conclusion comes first.</strong> <span data-i18n="r1.p">Every section opens with it, in bold. Headings and bold text alone give you the essentials.</span></li>
+    <li><strong data-i18n="r2.t">One analogy for the whole topic.</strong> <span data-i18n="r2.p">No juggling between three metaphors.</span></li>
+    <li><strong data-i18n="r3.t">No setting without its location.</strong> <span data-i18n="r3.p">Which file or tool it lives in, and how to check it works.</span></li>
+    <li><strong data-i18n="r4.t">One number per point.</strong> <span data-i18n="r4.p">Names and sources go at the end, not in the middle of a sentence.</span></li>
+    <li><strong data-i18n="r5.t">Casual body, neutral headings.</strong> <span data-i18n="r5.p">No hook, no suspense, no filler.</span></li>
+    <li><strong data-i18n="r6.t">Your language.</strong> <span data-i18n="r6.p">The agent answers in the language you write in.</span></li>
+  </ul>
+  <p class="note" data-i18n="rules.note">Every rule lives in a single <code>SKILL.md</code> file. Edit it to tune them.</p>
+</section>
+
+<section id="install" class="install" aria-labelledby="install-title">
+  <h2 id="install-title" data-i18n="install.title">Install</h2>
+  <ol class="steps">
+    <li>
+      <h3 data-i18n="s1.t">Install the skill</h3>
+      <div class="tabs" role="tablist" aria-label="Where">
+        <button type="button" role="tab" id="tab-cc" aria-controls="panel-cc" aria-selected="true">Claude Code</button>
+        <button type="button" role="tab" id="tab-any" aria-controls="panel-any" aria-selected="false" tabindex="-1" data-i18n="tab.any">Any agent</button>
+        <button type="button" role="tab" id="tab-npm" aria-controls="panel-npm" aria-selected="false" tabindex="-1" data-i18n="tab.npm">Without skills.sh</button>
+        <button type="button" role="tab" id="tab-app" aria-controls="panel-app" aria-selected="false" tabindex="-1" data-i18n="tab.app">Claude app</button>
+      </div>
+      <div class="panel" role="tabpanel" id="panel-cc" aria-labelledby="tab-cc">
+        <div class="cmd" data-copy><code>/plugin marketplace add GregoryBabonaux/progressive-explainer</code><button type="button" class="copy" data-i18n="copy">Copy</button></div>
+        <div class="cmd" data-copy><code>/plugin install progressive-explainer@progressive-explainer</code><button type="button" class="copy" data-i18n="copy">Copy</button></div>
+        <p data-i18n="panel.cc">Recommended. Adds the skill and an <code>/explain &lt;topic&gt;</code> command.</p>
+      </div>
+      <div class="panel" role="tabpanel" id="panel-any" aria-labelledby="tab-any" hidden>
+        <div class="cmd" data-copy><code>npx skills add GregoryBabonaux/progressive-explainer</code><button type="button" class="copy" data-i18n="copy">Copy</button></div>
+        <p data-i18n="panel.any">For Codex, Cursor, Gemini CLI, GitHub Copilot, OpenCode and others. Installs in the project, or globally with <code>-g</code>.</p>
+      </div>
+      <div class="panel" role="tabpanel" id="panel-npm" aria-labelledby="tab-npm" hidden>
+        <div class="cmd" data-copy><code>npx progressive-explainer-cli skills --yes</code><button type="button" class="copy" data-i18n="copy">Copy</button></div>
+        <p data-i18n="panel.npm">Copies the skill to <code>~/.agents/skills</code> and <code>~/.claude/skills</code>.</p>
+      </div>
+      <div class="panel" role="tabpanel" id="panel-app" aria-labelledby="tab-app" hidden>
+        <p data-i18n="panel.app">Download the <a href="https://github.com/GregoryBabonaux/progressive-explainer/tree/main/skills/progressive-explainer">skills/progressive-explainer</a> folder as a zip, then upload it in the Skills section of Claude's settings.</p>
+      </div>
+    </li>
+    <li>
+      <h3 data-i18n="s2.t">Optional: use it for every explanation in a project</h3>
+      <div class="cmd" data-copy><code>npx progressive-explainer-cli init</code><button type="button" class="copy" data-i18n="copy">Copy</button></div>
+      <p data-i18n="s2.p">By default you call the skill when you want it. This adds a rule to <code>AGENTS.md</code> (and <code>CLAUDE.md</code> or <code>GEMINI.md</code> if your project uses them) so the agent uses it whenever you ask for an explanation. Nothing is written until you add <code>--yes</code>.</p>
+    </li>
+    <li>
+      <h3 data-i18n="s3.t">Check</h3>
+      <div class="cmd" data-copy><code>npx progressive-explainer-cli doctor</code><button type="button" class="copy" data-i18n="copy">Copy</button></div>
+    </li>
+  </ol>
+</section>
+
+</main>
+
+<footer class="foot">
+  <p><a href="https://github.com/GregoryBabonaux/progressive-explainer">GitHub</a> · <a id="readme" href="https://github.com/GregoryBabonaux/progressive-explainer/blob/main/README.md">README</a> · <span data-i18n="foot.license">MIT license</span></p>
+  <p class="small" data-i18n="foot.by">Made by Grégory Babonaux.</p>
+</footer>
+
+<script src="i18n.js"></script>
+<script src="site.js"></script>
+</body>
+</html>

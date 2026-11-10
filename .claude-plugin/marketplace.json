@@ -1,0 +1,15 @@
+{
+  "name": "progressive-explainer",
+  "owner": {
+    "name": "Grégory Babonaux"
+  },
+  "description": "progressive-explainer: explanations for readers who lose focus in long AI answers.",
+  "plugins": [
+    {
+      "name": "progressive-explainer",
+      "source": "./",
+      "description": "Short overview, one running analogy, then a progress checklist to go deeper.",
+      "version": "0.1.0"
+    }
+  ]
+}
